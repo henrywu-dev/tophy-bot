@@ -33,6 +33,12 @@ env/
 *~
 .DS_Store
 
+# Security & Private Keys
+ssh/
+*.pem
+*.key
+*.pub
+
 # Configuration
 .env
 config/*.json

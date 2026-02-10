@@ -11,6 +11,7 @@ from tophy.trader.bot import TrophyBot
 from tophy.backtest.engine import BacktestEngine
 from strategies.rsi_strategy import RSIStrategy
 from strategies.macd_strategy import MACDStrategy
+from strategies.quantum_momentum_strategy import QuantumMomentumStrategy
 
 
 logger = get_logger(__name__)
@@ -19,6 +20,7 @@ logger = get_logger(__name__)
 STRATEGY_MAP = {
     "rsi": RSIStrategy,
     "macd": MACDStrategy,
+    "quantum": QuantumMomentumStrategy,
 }
 
 
