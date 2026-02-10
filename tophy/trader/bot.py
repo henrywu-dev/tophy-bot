@@ -1,15 +1,14 @@
 """Main trading bot"""
 
 import time
-from typing import Optional, Dict, Any, List
 from datetime import datetime
+from typing import Any, Dict, List, Optional
 
-from tophy.utils.logger import get_logger
-from tophy.utils.models import Trade, TradeState, OrderSide, Portfolio
 from tophy.exchange.base import BaseExchange
 from tophy.strategy.base_strategy import BaseStrategy
 from tophy.trader.position_manager import PositionManager
-
+from tophy.utils.logger import get_logger
+from tophy.utils.models import OrderSide, Portfolio, Trade, TradeState
 
 logger = get_logger(__name__)
 

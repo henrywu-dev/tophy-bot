@@ -1,14 +1,14 @@
 """Backtesting engine"""
 
 from datetime import datetime, timedelta
-from typing import List, Optional, Dict, Any
+from typing import Any, Dict, List, Optional
+
 import pandas as pd
 
-from tophy.utils.logger import get_logger
-from tophy.utils.models import Trade, TradeState, OrderSide
-from tophy.strategy.base_strategy import BaseStrategy
 from tophy.exchange.base import BaseExchange
-
+from tophy.strategy.base_strategy import BaseStrategy
+from tophy.utils.logger import get_logger
+from tophy.utils.models import OrderSide, Trade, TradeState
 
 logger = get_logger(__name__)
 
@@ -172,9 +172,7 @@ class BacktestEngine:
 
         # Average trade duration
         durations = [
-            (t.exit_time - t.entry_time).total_seconds()
-            for t in self.trades
-            if t.exit_time
+            (t.exit_time - t.entry_time).total_seconds() for t in self.trades if t.exit_time
         ]
         avg_duration = sum(durations) / len(durations) if durations else 0
 

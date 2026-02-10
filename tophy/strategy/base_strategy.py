@@ -2,11 +2,11 @@
 
 from abc import ABC, abstractmethod
 from typing import Dict, Optional
+
 import pandas as pd
 
 from tophy.utils.logger import get_logger
 from tophy.utils.models import OrderSide
-
 
 logger = get_logger(__name__)
 

@@ -1,18 +1,15 @@
 """CLI interface for the bot"""
 
 import argparse
-import json
-from pathlib import Path
 
-from tophy.utils.logger import get_logger
-from tophy.utils.config import load_config
-from tophy.exchange.base import BaseExchange
-from tophy.trader.bot import TrophyBot
-from tophy.backtest.engine import BacktestEngine
-from strategies.rsi_strategy import RSIStrategy
 from strategies.macd_strategy import MACDStrategy
 from strategies.quantum_momentum_strategy import QuantumMomentumStrategy
-
+from strategies.rsi_strategy import RSIStrategy
+from tophy.backtest.engine import BacktestEngine
+from tophy.exchange.base import BaseExchange
+from tophy.trader.bot import TrophyBot
+from tophy.utils.config import load_config
+from tophy.utils.logger import get_logger
 
 logger = get_logger(__name__)
 

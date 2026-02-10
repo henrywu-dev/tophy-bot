@@ -1,6 +1,5 @@
 """Example RSI strategy"""
 
-import pandas as pd
 from tophy.strategy.base_strategy import BaseStrategy
 from tophy.strategy.indicators import calculate_rsi, calculate_sma
 
@@ -19,9 +18,7 @@ class RSIStrategy(BaseStrategy):
         if self.dataframe is None:
             return
 
-        self.dataframe["rsi"] = calculate_rsi(
-            self.dataframe, period=self.rsi_period
-        )
+        self.dataframe["rsi"] = calculate_rsi(self.dataframe, period=self.rsi_period)
         self.dataframe["sma_20"] = calculate_sma(self.dataframe, period=20)
         self.dataframe["sma_50"] = calculate_sma(self.dataframe, period=50)
 
@@ -39,11 +36,7 @@ class RSIStrategy(BaseStrategy):
         sma_50 = self.dataframe["sma_50"]
         close = self.dataframe["close"]
 
-        buy_condition = (
-            (rsi < self.rsi_lower)
-            & (close > sma_20)
-            & (sma_20 > sma_50)
-        )
+        buy_condition = (rsi < self.rsi_lower) & (close > sma_20) & (sma_20 > sma_50)
 
         self.dataframe.loc[buy_condition, "buy_signal"] = True
 

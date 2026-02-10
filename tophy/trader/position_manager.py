@@ -1,11 +1,10 @@
 """Position management"""
 
-from typing import List, Optional
 from datetime import datetime
+from typing import List, Optional
 
 from tophy.utils.logger import get_logger
-from tophy.utils.models import Trade, TradeState, OrderSide
-
+from tophy.utils.models import OrderSide, Trade, TradeState
 
 logger = get_logger(__name__)
 
@@ -21,16 +20,11 @@ class PositionManager:
     def open_trade(self, trade: Trade) -> bool:
         """Open a new trade"""
         if len(self.open_trades) >= self.max_open_trades:
-            logger.warning(
-                f"Maximum open trades ({self.max_open_trades}) reached"
-            )
+            logger.warning(f"Maximum open trades ({self.max_open_trades}) reached")
             return False
 
         self.open_trades.append(trade)
-        logger.info(
-            f"Opened trade: {trade.symbol} @ {trade.entry_price} "
-            f"(Q: {trade.quantity})"
-        )
+        logger.info(f"Opened trade: {trade.symbol} @ {trade.entry_price} " f"(Q: {trade.quantity})")
         return True
 
     def close_trade(self, trade: Trade, exit_price: float) -> bool:

@@ -1,11 +1,13 @@
 """Unit tests for the trading bot"""
 
-import pytest
-import pandas as pd
 from datetime import datetime
-from tophy.utils.models import OrderSide, OrderType, Trade, TradeState
-from tophy.strategy.indicators import calculate_rsi, calculate_sma, calculate_macd
+
+import pandas as pd
+import pytest
+
 from strategies.rsi_strategy import RSIStrategy
+from tophy.strategy.indicators import calculate_macd, calculate_rsi, calculate_sma
+from tophy.utils.models import OrderSide, OrderType, Trade, TradeState
 
 
 @pytest.fixture

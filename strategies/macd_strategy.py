@@ -1,6 +1,5 @@
 """Example MACD strategy"""
 
-import pandas as pd
 from tophy.strategy.base_strategy import BaseStrategy
 from tophy.strategy.indicators import calculate_macd, calculate_sma
 
@@ -31,17 +30,11 @@ class MACDStrategy(BaseStrategy):
         signal = self.dataframe["macd_signal"]
 
         # Buy: MACD crosses above signal line
-        buy_condition = (
-            (macd > signal)
-            & (macd.shift(1) <= signal.shift(1))
-        )
+        buy_condition = (macd > signal) & (macd.shift(1) <= signal.shift(1))
         self.dataframe.loc[buy_condition, "buy_signal"] = True
 
         # Sell: MACD crosses below signal line
-        sell_condition = (
-            (macd < signal)
-            & (macd.shift(1) >= signal.shift(1))
-        )
+        sell_condition = (macd < signal) & (macd.shift(1) >= signal.shift(1))
         self.dataframe.loc[sell_condition, "sell_signal"] = True
 
     def populate_exit_signals(self) -> None:

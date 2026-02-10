@@ -58,6 +58,11 @@ data/
 .coverage
 htmlcov/
 
+# Linting & Type Checking
+.mypy_cache/
+.pylint.d/
+.flake8_cache/
+
 # OS
 .DS_Store
 Thumbs.db

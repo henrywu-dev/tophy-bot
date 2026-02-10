@@ -1,0 +1,37 @@
+[MASTER]
+max-line-length=100
+ignore-long-lines=^(\s*(# )?<?https?://\S+>?)$
+load-plugins=pylint.extensions.docparams
+extension-pkg-allow-list=ccxt
+
+[MESSAGES CONTROL]
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    too-many-arguments,
+    too-many-instance-attributes,
+    too-many-locals,
+    too-many-branches,
+    too-many-statements,
+    broad-exception-caught,
+    line-too-long,
+
+[DESIGN]
+max-attributes=10
+max-arguments=6
+max-locals=20
+max-branches=15
+max-statements=50
+
+[VARIABLES]
+good-names=i,j,k,ex,Run,_
+
+[FORMAT]
+max-line-length=100
+indent-string='    '
+
+[SIMILARITIES]
+min-similarity-lines=5
+ignore-comments=yes
+ignore-docstrings=yes

@@ -2,24 +2,27 @@
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Optional
 from enum import Enum
+from typing import Optional
 
 
 class OrderType(Enum):
     """Order types"""
+
     MARKET = "market"
     LIMIT = "limit"
 
 
 class OrderSide(Enum):
     """Order side"""
+
     BUY = "buy"
     SELL = "sell"
 
 
 class TradeState(Enum):
     """Trade state"""
+
     OPEN = "open"
     CLOSED = "closed"
     CANCELLED = "cancelled"
@@ -28,6 +31,7 @@ class TradeState(Enum):
 @dataclass
 class Ticker:
     """Price ticker data"""
+
     symbol: str
     timestamp: datetime
     open: float
@@ -45,6 +49,7 @@ class Ticker:
 @dataclass
 class Order:
     """Order data"""
+
     id: str
     symbol: str
     side: OrderSide
@@ -60,6 +65,7 @@ class Order:
 @dataclass
 class Trade:
     """Trade data"""
+
     id: str
     symbol: str
     entry_time: datetime
@@ -89,6 +95,7 @@ class Trade:
 @dataclass
 class Portfolio:
     """Portfolio data"""
+
     balance: float = 0.0
     stake_amount: float = 0.0
     open_trades: int = 0

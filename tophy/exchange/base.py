@@ -1,13 +1,13 @@
 """Base exchange class"""
 
-import ccxt
-from typing import Dict, List, Optional, Tuple
 from datetime import datetime, timedelta
+from typing import Dict, List, Optional, Tuple
+
+import ccxt
 import pandas as pd
 
 from tophy.utils.logger import get_logger
-from tophy.utils.models import Ticker, Order, OrderSide, OrderType
-
+from tophy.utils.models import Order, OrderSide, OrderType, Ticker
 
 logger = get_logger(__name__)
 
