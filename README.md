@@ -1,6 +1,6 @@
 # Tophy Bot - Cryptocurrency Trading Bot
 
-A powerful and flexible cryptocurrency trading bot similar to freqtrade, built in Python.
+A powerful and flexible cryptocurrency trading bot, built in Python.
 
 ## Features
 
