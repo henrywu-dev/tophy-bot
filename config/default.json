@@ -1,0 +1,24 @@
+{
+  "exchange": {
+    "name": "binance",
+    "api_key": "your_api_key_here",
+    "api_secret": "your_api_secret_here",
+    "is_sandbox": true
+  },
+  "trading": {
+    "mode": "dry-run",
+    "pair": "BTC/USDT",
+    "timeframe": "1h",
+    "stake_amount": 100,
+    "max_open_trades": 3,
+    "check_interval": 60
+  },
+  "risk_management": {
+    "stop_loss": -0.05,
+    "take_profit": 0.10
+  },
+  "backtest": {
+    "initial_balance": 10000,
+    "days": 30
+  }
+}

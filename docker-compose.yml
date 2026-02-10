@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  tophy-bot:
+    build: .
+    container_name: tophy-bot
+    environment:
+      - EXCHANGE_NAME=binance
+      - EXCHANGE_API_KEY=${EXCHANGE_API_KEY}
+      - EXCHANGE_API_SECRET=${EXCHANGE_API_SECRET}
+      - EXCHANGE_SANDBOX=true
+      - TRADING_MODE=dry-run
+      - TRADING_PAIR=BTC/USDT
+      - TRADING_TIMEFRAME=1h
+      - TRADING_STAKE_AMOUNT=100
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config
+      - ./strategies:/app/strategies
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
